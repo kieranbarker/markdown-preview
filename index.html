@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Preview the HTML output of your Markdown content.">
+    <title>Markdown Preview</title>
+    <link href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12/dist/css/tabby-ui.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header>
+      <h1>Markdown Preview</h1>
+      <ul data-tabs>
+        <li>
+          <a href="#markdown" data-tabby-default>Markdown</a>
+        </li>
+        <li>
+          <a href="#preview">Preview</a>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <!-- The Markdown area -->
+      <div id="markdown" class="content">
+        <label for="markdown__area">Enter your Markdown here</label>
+        <textarea id="markdown__area" class="content__area"></textarea>
+      </div>
+
+      <!-- The preview area -->
+      <div id="preview" class="content">
+        <p>
+          <strong>Add some Markdown, and the HTML preview will show here.</strong>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <p>
+        <small>Built with ❤️ by <a href="https://kbarker.dev/">Kieran Barker</a>. View <a href="https://github.com/kieranbarker/markdown-preview">the repository</a> on GitHub.</small>
+      </p>
+      <p>
+        <small>Made possible by <a href="https://github.com/cferdinandi/tabby/">Tabby</a>, <a href="https://github.com/cure53/DOMPurify">DOMPurify</a>, and <a href="https://github.com/markedjs/marked">Marked.js</a>.</small>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12/dist/js/tabby.polyfills.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@1/marked.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
