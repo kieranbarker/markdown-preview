@@ -6,15 +6,15 @@
   // Variables
   //
 
-  // Get the markdown area
+  // Get the markdown and preview areas
   var markdownArea = document.querySelector("#markdown__area");
-
-  // Get the preview area
   var previewArea = document.querySelector("#preview");
 
   // Save the localStorage key for easy updates
   var storageKey = "markdownPreview";
 
+  // Save the Tabby instantiation
+  var tabs;
 
   //
   // Functions
@@ -70,7 +70,7 @@
   //
 
   // Initialize Tabby
-  var tabs = new Tabby("[data-tabs]");
+  tabs = new Tabby("[data-tabs]");
 
   // Load any saved data
   loadData();
