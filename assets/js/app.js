@@ -20,7 +20,9 @@
   /**
    * Update the markdown preview
    */
-  var updatePreview = function () {};
+  var updatePreview = function () {
+    previewArea.innerHTML = marked(markdownArea.value);
+  };
 
 
   //
