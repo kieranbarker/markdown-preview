@@ -6,6 +6,7 @@
     <meta name="description" content="Preview the HTML output of your Markdown content.">
     <title>Markdown Preview</title>
     <link href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12/dist/css/tabby-ui.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
   </head>
   <body>
     <h1>Markdown Preview</h1>
@@ -17,8 +18,11 @@
         <a href="#preview">Preview</a>
       </li>
     </ul>
-    <div id="markdown"></div>
-    <div id="preview"></div>
+    <div id="markdown" class="content">
+      <label for="markdown__area">Enter your Markdown here</label>
+      <textarea id="markdown__area" class="content__area"></textarea>
+    </div>
+    <div id="preview" class="content"></div>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12/dist/js/tabby.polyfills.min.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
