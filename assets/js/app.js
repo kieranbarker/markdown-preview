@@ -21,7 +21,7 @@
    * Update the markdown preview
    */
   var updatePreview = function () {
-    previewArea.innerHTML = marked(markdownArea.value);
+    previewArea.innerHTML = DOMPurify.sanitize(marked(markdownArea.value));
   };
 
 
