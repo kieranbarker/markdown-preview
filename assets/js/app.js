@@ -12,7 +12,7 @@
   // Get the preview area
   var previewArea = document.querySelector("#preview");
 
-  // Save the localStorage key for easy future changes
+  // Save the localStorage key for easy updates
   var storageKey = "markdownPreview";
 
 
