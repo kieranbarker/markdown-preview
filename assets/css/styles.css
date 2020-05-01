@@ -6,7 +6,7 @@ body {
   width: 88%;
   max-width: 40em;
   margin: 1em auto;
-  line-height: 1.5;
+  font: 16px/1.5 Arial, sans-serif; 
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
 }
