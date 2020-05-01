@@ -21,26 +21,49 @@
   //
 
   /**
+   * Update the preview area
+   */
+  var updatePreview = function () {
+    previewArea.innerHTML = DOMPurify.sanitize(marked(markdownArea.value));
+  };
+
+  /**
    * Save the data to localStorage
    * @param {String} data The data to save
    */
   var saveData = function (data) {
-    localStorage.setItem(storageKey, data);
+    localStorage.setItem(storageKey, JSON.stringify(data));
   };
 
   /**
-   * Update the markdown preview
+   * Load the data saved in localStorage
    */
-  var updatePreview = function () {
+  var loadData = function () {
+
+    // Get the saved data
+    var data = localStorage.getItem(storageKey);
+    if (!data) return;
+
+    // Load the data into the textarea
+    markdownArea.value = JSON.parse(data);
 
     // Update the preview
-    previewArea.innerHTML = DOMPurify.sanitize(marked(markdownArea.value));
+    updatePreview();
+
+  }
+
+  /**
+   * Handle input events
+   */
+  var inputHandler = function () {
+
+    // Update the preview
+    updatePreview();
 
     // Save the Markdown to localStorage
     saveData(markdownArea.value);
 
   };
-
 
   //
   // Inits & Event Listeners
@@ -49,7 +72,10 @@
   // Initialize Tabby
   var tabs = new Tabby("[data-tabs]");
 
+  // Load any saved data
+  loadData();
+
   // Update the preview area on input
-  markdownArea.addEventListener("input", updatePreview);
+  markdownArea.addEventListener("input", inputHandler);
 
 })();
